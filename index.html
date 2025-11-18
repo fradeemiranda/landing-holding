@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Baixe o Ebook - Holding Familiar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; font-family:'Poppins',sans-serif; background:#f7f7f7; color:#1b1b1b; }
+  header { background:#0a1f44; padding:40px 20px; text-align:center; color:white; }
+  header h1 { font-size:2.2rem; margin:0 0 8px; }
+  header p { margin:0; opacity:0.9; }
+  .container { max-width:1100px; margin:40px auto; padding:20px; display:flex; gap:40px; align-items:center; justify-content:center; flex-wrap:wrap; }
+  .ebook-cover img { width:320px; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.2); display:block; }
+  .content { max-width:600px; }
+  .content h2 { color:#0a1f44; font-size:1.6rem; margin:0 0 16px; }
+  .content p { line-height:1.6; margin:0 0 12px; }
+  .benefits { list-style:none; padding:0; margin:0 0 18px; }
+  .benefits li{ margin-bottom:10px; }
+  .benefits li::before { content:"✔"; color:#d4a447; margin-right:10px; }
+  .form-box { background:#fff; padding:20px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); }
+  .form-box input { width:100%; padding:12px; margin-bottom:12px; border-radius:6px; border:1px solid #ccc; font-size:1rem; }
+  .form-box button { width:100%; padding:14px; background:#d4a447; border:none; border-radius:8px; color:#fff; font-weight:700; cursor:pointer; }
+  footer { text-align:center; padding:20px; color:#555; }
+  @media (max-width:800px) {
+    .container { flex-direction:column; gap:20px; }
+    .ebook-cover img { width:80%; max-width:360px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Proteja seu Patrimônio com Inteligência</h1>
+  <p>Baixe gratuitamente o ebook completo sobre Holding Familiar e aprenda como proteger, organizar e reduzir impostos.</p>
+</header>
+
+<div class="container">
+  <div class="ebook-cover">
+    <img src="https://raw.githubusercontent.com/fradeemiranda/landing-holding/main/capa.png" alt="Capa do Ebook" />
+  </div>
+  <div class="content">
+    <h2>O que você vai aprender</h2>
+    <ul class="benefits">
+      <li>Proteção patrimonial contra riscos e execuções</li>
+      <li>Como evitar inventário e reduzir conflitos familiares</li>
+      <li>Vantagens fiscais aplicáveis ao seu patrimônio</li>
+
+</ul>
+
+    <div class="form-box">
+      <h3>Receba o ebook grátis no seu email</h3>
+      <form id="leadForm">
+        <input type="text" id="name" placeholder="Seu nome" required>
+        <input type="email" id="email" placeholder="Seu melhor email" required>
+        <input type="text" id="whatsapp" placeholder="Seu WhatsApp (opcional)">
+        <button type="submit">Quero Receber Agora</button>
+      </form>
+      <p id="msg" style="display:none;margin-top:10px;color:green;">Obrigado! Verifique seu e-mail em breve.</p>
+    </div>
+  </div>
+</div>
+
+<footer>Frade e Miranda Holding © Todos os direitos reservados</footer>
+
+<script>
+document.getElementById('leadForm').addEventListener('submit', function(e){ 
+  e.preventDefault();
+  document.getElementById('msg').style.display = 'block';
+  var name = encodeURIComponent(document.getElementById('name').value || '');
+  var email = encodeURIComponent(document.getElementById('email').value || '');
+  var wa = encodeURIComponent(document.getElementById('whatsapp').value || '');
+  var subject = encodeURIComponent('Novo lead - Ebook Holding Familiar');
+  var body = encodeURIComponent('Nome: ' + name + '\nEmail: ' + email + '\nWhatsApp: ' + wa);
+  var mailto = 'mailto:fradeemiranda@gmail.com?subject=' + subject + '&body=' + body;
+  window.location.href = mailto;
+});
+</script>
+
+
+<script>
+  const form = document.getElementById('leadForm');
+  const msg = document.getElementById('msg');
+  if (form) {
+    form.addEventListener('submit', function(e){
+      // show immediate feedback; FormSubmit will handle the POST
+      msg.style.display = 'block';
+      msg.style.color = 'black';
+      msg.innerText = 'Enviando...';
+      setTimeout(() => {
+        msg.style.color = 'green';
+        msg.innerText = 'Obrigado — em breve você receberá o ebook no seu e-mail.';
+        form.reset();
+      }, 1200);
+    });
+  }
+</script>
+</body>
+
+</html>
