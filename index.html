@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baixe o Ebook - Holding Familiar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f7f7f7;
+      color: #1b1b1b;
+    }
+    header {
+      background: #0a1f44;
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+    .ebook-cover img {
+      width: 350px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .content {
+      max-width: 550px;
+    }
+    .content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #0a1f44;
+    }
+    .content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .benefits {
+      list-style: none;
+      padding: 0;
+    }
+    .benefits li {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .benefits li::before {
+      content: "✔";
+      margin-right: 10px;
+      color: #d4a447;
+      font-weight: bold;
+    }
+    .form-box {
+      background: white;
+      padding: 25px;
+      margin-top: 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .form-box h3 {
+      margin-bottom: 15px;
+      color: #0a1f44;
+    }
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #d4a447;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #b58732;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Proteja seu Patrimônio com Inteligência</h1>
+  <p>Baixe gratuitamente o ebook completo sobre Holding Familiar e aprenda como proteger, organizar e reduzir impostos.</p>
+</header>
+
+<div class="container">
+  <div class="ebook-cover">
+    <img src="https://raw.githubusercontent.com/fradeemiranda/landing-holding/main/capa.png" alt="Capa do Ebook" />
+  </div>
+  <div class="content">
+    <h2>O que você vai aprender:</h2>
+    <ul class="benefits">
+      <li>Como funciona a proteção patrimonial;</li>
+      <li>Como evitar inventário e conflitos familiares;</li>
+      <li>Como reduzir impostos de forma legal e estratégica;</li>
+      
+      
+    </ul>
+
+    <div class="form-box">
+      <h3>Receba o ebook grátis no seu email:</h3>
+      <form id="leadForm" action="https://formsubmit.co/fradeemiranda@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Novo lead - Ebook Holding Familiar">
+        <input type="hidden" name="_captcha" value="false">
+
+        <input type="text" name="name" id="name" placeholder="Seu nome" required />
+        <input type="email" name="email" id="email" placeholder="Seu melhor email" required />
+        <input type="text" name="whatsapp" id="whatsapp" placeholder="Seu WhatsApp" required />
+
+        <button type="submit">Quero Receber Agora</button>
+      </form>
+      <p id="msg" style="display:none;margin-top:10px;color:green;"></p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Frade e Miranda Holding © Todos os direitos reservados
+</footer>
+
+<script>
+// FormSubmit — envio simples e funcional
+const form = document.getElementById('leadForm');
+const msg = document.getElementById('msg');
+
+form.addEventListener('submit', function () {
+  msg.style.display = 'block';
+  msg.style.color = 'black';
+  msg.innerText = 'Enviando...';
+
+  setTimeout(() => {
+    msg.style.color = 'green';
+    msg.innerText = 'Obrigado — em breve você receberá o ebook no seu e-mail.';
+  }, 1200);
+});
+</script>
+</body>
+</html>
