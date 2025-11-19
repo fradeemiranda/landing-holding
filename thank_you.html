@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Obrigado — Ebook enviado</title>
+<style>body{font-family:Arial,Helvetica,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;background:#f7f7f7} .card{background:#fff;padding:30px;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.08);max-width:600px;text-align:center} a.button{display:inline-block;margin-top:20px;padding:12px 20px;background:#0a1f44;color:#fff;border-radius:6px;text-decoration:none} </style>
+</head>
+<body>
+<div class="card">
+  <h1>Obrigado!</h1>
+  <p>Seu ebook será enviado por e-mail em instantes. Enquanto isso, você pode baixar agora:</p>
+  <!-- The link below should point to the ebook file in your repo root as 'ebook.pdf' -->
+  <a id="dl" class="button" href="ebook.pdf" download>Baixar o Ebook Agora</a>
+  <p style="margin-top:12px;color:#666">Se o download não iniciar, verifique seu e-mail.</p>
+</div>
+<script>
+// Try to auto-click the download link after a short delay
+setTimeout(function(){
+  var link = document.getElementById('dl');
+  if(link){ try { link.click(); } catch(e){} }
+}, 1200);
+</script>
+</body>
+</html>
